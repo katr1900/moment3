@@ -7,7 +7,8 @@ const concat = require("gulp-concat"); // Konkatenerar ihop filer
 const uglify = require("gulp-uglify-es").default; // Minifierar JavaScript-filer
 const uglifycss = require("gulp-uglifycss"); // Minifierar Css-filer
 const browserSync = require("browser-sync").create(); // Laddar om browsers automatiskt
-
+const sass = require('gulp-sass'); 
+sass.compiler = require('node-sass');
 
 // Task för CSS
 function css(){
@@ -36,8 +37,26 @@ function html(){
         .pipe(gulp.dest("./pub/")) // Kopierar alla html-filerna till pub-katalogen
         .pipe(browserSync.stream()); // Notifiera browserSync om en ändring av HTML
 }
+//Task för sass
+function scss() {
+    return gulp
+        .src("./source/sass/*.scss")
+        // .pipe(sourcemaps.init())
+        .pipe(sass().on("error", sass.logError))
+        .pipe(gulp.dest("pub/css"))
+        .pipe(browserSync.stream());
+}
+// Task för images
+function images(){
+    return gulp
+        .src("./source/images/*.*") // Hämtar alla filer i images-katalogen
+        .pipe(gulp.dest("./pub/images")) // Kopierar alla filerna till pub/images-katalogen
+        .pipe(browserSync.stream()); // Notifiera browserSync om en ändring av Images
+}
 
-const defaultTask = series(css, js, html); // Skapar en default task som är serie som anropar css, js och html-funktionerna.
+     
+
+const defaultTask = series(scss, js, html, images); // Skapar en default task som är serie som anropar css, js och html-funktionerna.
 
 // Skapar en lokalserver med browsersync. Den startar en webbläsare med filen index.html i pub-katalogen
 browserSync.init({

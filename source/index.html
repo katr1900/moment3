@@ -2,32 +2,52 @@
 <html lang="se">
 
 <head>
-    <title>DT084G - Laboration 3</title>
+    <title>Webbutveckling III</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 
 <body>
     <header id="mainheader">
         <div class="contain">
-            <h1 id="logo">DT084G</h1>
+            <h1 id="logo">Webbutveckling III</h1>
         </div>
         <!-- /.contain -->
     </header>
+    <div class="dropdown">
+        <button class="dropbtn">Huvudmeny</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+          <a href="#">Link 4</a>
+          <a href="#">Link 5</a>
+        </div>
+      </div>
 
     <div class="container">
-        <h2>Laboration 3 - DOM och events</h2>
-
+        <h2>CSS-preprocesorer och SASS</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut purus et odio tristique maximus euismod eu
+            enim. Quisque libero lacus, ultrices ac tellus vel, ornare fringilla nisl. Quisque vel auctor diam, non
+            faucibus risus. Fusce non efficitur lectus, eget hendrerit tellus. Vestibulum sit amet facilisis libero.
+            Vestibulum vel vulputate neque, laoreet viverra justo. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos.
+        </p>
+        <div class="images">
+            <img src="images/idea.png" alt="idea">
+            <img src="images/jigsaw.png" alt="jigsaw">
+        </div>
         <h3>Lägg till ny sak att göra</h3>
 
         <section id="new">
             <label for="newtodo">Att göra:</label><br>
             <input type="text" id="newtodo">&nbsp;
             <button class="btn" id="newtodobutton">Lägg till</button><br>
-            <span id="message"></span>
+            <span id="message" class="messages--serious"></span>
         </section>
 
         <h3>Saker att göra</h3>
@@ -35,10 +55,10 @@
             
         </section>
 
-        <button id="clearbutton" class="btn">Rensa</button>
+        <button id="clearbutton" class="btn-reset">Rensa</button>
 
         <footer>
-            <p>Laborationsuppgift för kursen DT084G, Introduktion till programmering med JavaScript.</p>
+            <p>Webbutveckling III</p>
         </footer>
     </div>
     <!-- /.container -->

@@ -1,0 +1,27 @@
+@mixin btn  ($reset: false){
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 1em 0 1em;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border-radius: .25rem;
+    border: 0;
+    text-decoration: none;
+    color: #fff; 
+    @if $reset{
+        background-color: darken( $button-color, 20% );
+       
+      
+    }
+    @else{
+
+        background-color: $button-color;
+    }
+
+}
