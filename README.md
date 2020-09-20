@@ -1,23 +1,7 @@
-# Uppgift 2 
+# Uppgift 3
 ## i kursen Webbutveckling III
 
-Detta projekt visar en automatiseringsprocess med Gulp js.
 
-### Syfte
-Fördelarna med automatiseringsprocessen är många. Man kan t.ex. bygga olika filer för olika miljöer. T.ex. kan man minifiera koden i produktion medan man inte gör det vid lokal utveckling för lättare felsökning/debuggning. Det här ger mindre filstorlek och snabbare inladdning av filerna i produktion eftersom filerna är minifierade. 
-
-Vid utveckling kan man använda sig av automatisk omladdning av webbläsaren vid någon ändring. Det här kan underlätta om man gör många mindre ändringar ofta. Då kan det vara omständigt att behöva ladda om webbläsaren hela tiden. Har man webbläsaren uppe på skärmen så ser man ändringen direkt utan att behöva ladda om sidan.
-
-### Uppbyggnad
-De npm-paket som jag har använt i projekt för automatiseringsprocessen är följande:
-
-- gulp - en task manager för att köra olika tasks i t.ex. en serie
-- gulp-concat - paket för att konkatenera filer
-- gulp-uglify-es - minifierar JavaScript-filer
-- gulp-uglifycss - minifierar CSS-filer
-- browser-sync - Används för att automatiskt ladda om webbläsaren vid ändringar
-
-I uppgiften ingick att använda Gulp och de andra paketen valde jag eftersom de passar ihop bra med Gulp. De är enkla att använda och det finns bra dokumentation om dem på Internet.
 
 ## Användning
 
