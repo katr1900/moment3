@@ -9,6 +9,7 @@ const uglifycss = require("gulp-uglifycss"); // Minifierar Css-filer
 const browserSync = require("browser-sync").create(); // Laddar om browsers automatiskt
 const sass = require('gulp-sass'); 
 sass.compiler = require('node-sass');
+const babel = require('gulp-babel');
 
 // Task för CSS
 function css(){
@@ -25,6 +26,9 @@ function js(){
     return gulp
         .src("./source/js/*.js") // Hämtar alla js filer i source/js-katalogen
         .pipe(concat("script.js")) // Konkatenerar alla filerna till en fil: script.js
+        .pipe(babel({ // Konverterar koden till ett äldre format för kompabilitet med äldre webbläsare
+            presets: ['@babel/env']
+        }))
         .pipe(uglify()) // Minifierar script.js
         .pipe(gulp.dest("./pub/")) // Sparar style.css i pub-katalogen
         .pipe(browserSync.stream()); // Notifiera browserSync om en ändring av JavaScript
